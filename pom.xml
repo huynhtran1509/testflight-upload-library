@@ -9,7 +9,7 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <scm>
-		<developerConnection>scm:git:git@github.com:willowtreeapps/testflight-upload-library.git</developerConnection>
+	<developerConnection>scm:git:git@github.com:willowtreeapps/testflight-upload-library.git</developerConnection>
     </scm>
 
     <dependencies>
