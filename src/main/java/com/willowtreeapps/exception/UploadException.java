@@ -1,4 +1,4 @@
-package com.willowtreeapps.testflight;
+package com.willowtreeapps.exception;
 
 /*
  * Copyright 2000-2012 JetBrains s.r.o.
