@@ -4,7 +4,7 @@
 
     <groupId>com.willowtreeapps.testflight</groupId>
     <artifactId>testflight-upload-library</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
 
     <scm>
 		<developerConnection>scm:git:git@github.com:willowtreeapps/testflight-upload-library.git</developerConnection>
