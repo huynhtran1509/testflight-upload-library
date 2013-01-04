@@ -40,7 +40,7 @@ public class TestFlightUploader extends AbstractUploader
 
     private static final String POST = "/api/builds.json";
 
-    public Map prepare(UploadRequest ur) throws IOException, org.json.simple.parser.ParseException {
+    public Map upload(UploadRequest ur) throws IOException, org.json.simple.parser.ParseException {
 
         DefaultHttpClient httpClient = new DefaultHttpClient();
 
@@ -69,6 +69,6 @@ public class TestFlightUploader extends AbstractUploader
         entity.addPart("replace", new StringBody(ur.replace ? "True" : "False"));
         httpPost.setEntity(entity);
 
-        return this.upload(ur, httpClient, targetHost, httpPost);
+        return this.send(ur, httpClient, targetHost, httpPost);
     }
 }

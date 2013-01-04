@@ -22,9 +22,9 @@ import java.util.Scanner;
  */
 public abstract class AbstractUploader implements Serializable
 {
-    public abstract Map prepare(UploadRequest ur) throws IOException, org.json.simple.parser.ParseException;
+    public abstract Map upload(UploadRequest ur) throws IOException, org.json.simple.parser.ParseException;
 
-    protected Map upload(UploadRequest ur, DefaultHttpClient httpClient, HttpHost targetHost, HttpPost httpPost) throws IOException, ParseException
+    protected Map send(UploadRequest ur, DefaultHttpClient httpClient, HttpHost targetHost, HttpPost httpPost) throws IOException, ParseException
     {
         HttpResponse response = httpClient.execute(targetHost,httpPost);
         HttpEntity resEntity = response.getEntity();
@@ -46,6 +46,5 @@ public abstract class AbstractUploader implements Serializable
         JSONParser parser = new JSONParser();
 
         return (Map)parser.parse(new BufferedReader(new InputStreamReader(is)));
-
     }
 }

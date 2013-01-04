@@ -24,7 +24,7 @@ public class HockeyAppUploader extends AbstractUploader
 
     private static final String POST = "/api/2/apps";
 
-    public Map prepare(UploadRequest ur) throws IOException, org.json.simple.parser.ParseException
+    public Map upload(UploadRequest ur) throws IOException, org.json.simple.parser.ParseException
     {
         DefaultHttpClient httpClient = new DefaultHttpClient();
 
@@ -47,6 +47,6 @@ public class HockeyAppUploader extends AbstractUploader
 
         httpPost.setHeader("X-HockeyAppToken", ur.apiToken);
 
-        return this.upload(ur, httpClient, targetHost, httpPost);
+        return this.send(ur, httpClient, targetHost, httpPost);
     }
 }
