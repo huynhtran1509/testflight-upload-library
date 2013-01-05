@@ -19,4 +19,5 @@ public class UploadRequest implements Serializable
     public File dsymFile;
     public String lists;
     public Boolean replace;
+    public Boolean status;
 }

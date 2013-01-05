@@ -28,18 +28,24 @@ public class HockeyAppUploader extends AbstractUploader
     {
         DefaultHttpClient httpClient = new DefaultHttpClient();
 
-        HttpHost targetHost = new HttpHost(HOST);
+        HttpHost targetHost = new HttpHost(HOST, 443, "https");
         HttpPost httpPost = new HttpPost(POST);
         FileBody fileBody = new FileBody(ur.file);
 
         MultipartEntity entity = new MultipartEntity();
         entity.addPart("notes", new StringBody(ur.buildNotes));
+        entity.addPart("status", new StringBody(ur.status ? "2" : "1"));
+
+        if (ur.lists != null)
+        {
+            entity.addPart("tags", new StringBody(ur.lists));
+        }
+
         entity.addPart("ipa", fileBody);
 
         if (ur.dsymFile != null)
         {
-            FileBody dsymFileBody = new FileBody(ur.dsymFile);
-            entity.addPart("dsym", dsymFileBody);
+            entity.addPart("dsym", new FileBody(ur.dsymFile));
         }
 
         entity.addPart("notify", new StringBody(ur.notifyTeam ? "1" : "0"));

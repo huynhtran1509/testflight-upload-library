@@ -33,14 +33,14 @@ public abstract class AbstractUploader implements Serializable
 
         int statusCode = response.getStatusLine().getStatusCode();
 
-        if (statusCode != 200)
+        if (statusCode != 200 && statusCode != 201)
         {
             String responseBody = new Scanner(is).useDelimiter("\\A").next();
             throw new UploadException(statusCode, responseBody, response);
         }
         else
         {
-            System.out.println("'" + ur.file.getName() + "' successfully uploaded to TestFlight");
+            System.out.println("'" + ur.file.getName() + "' successfully uploaded!!");
         }
 
         JSONParser parser = new JSONParser();
