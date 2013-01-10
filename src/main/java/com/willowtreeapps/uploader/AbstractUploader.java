@@ -38,10 +38,6 @@ public abstract class AbstractUploader implements Serializable
             String responseBody = new Scanner(is).useDelimiter("\\A").next();
             throw new UploadException(statusCode, responseBody, response);
         }
-        else
-        {
-            System.out.println("'" + ur.file.getName() + "' successfully uploaded!!");
-        }
 
         JSONParser parser = new JSONParser();
 
