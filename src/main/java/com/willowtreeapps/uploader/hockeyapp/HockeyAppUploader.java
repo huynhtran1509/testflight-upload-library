@@ -48,6 +48,7 @@ public class HockeyAppUploader extends AbstractUploader
             entity.addPart("dsym", new FileBody(ur.dsymFile));
         }
 
+        entity.addPart("private", new StringBody(ur.privateDownload ? "true" : "false"));
         entity.addPart("notify", new StringBody(ur.notifyTeam ? "1" : "0"));
         httpPost.setEntity(entity);
 

@@ -20,4 +20,5 @@ public class UploadRequest implements Serializable
     public String lists;
     public Boolean replace;
     public Boolean status;
+    public Boolean privateDownload;
 }
